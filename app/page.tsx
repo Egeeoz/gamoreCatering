@@ -19,8 +19,6 @@ export const metadata = {
 export default function Home() {
   return (
     <div className="min-h-screen bg-[#FAF9F6]">
-      {/* Navigation */}
-      <Nav />
       {/* Hero Section */}
       <Hero />
       {/* Features Section */}
@@ -33,8 +31,6 @@ export default function Home() {
       <Contact />
       {/* FAQ Section */}
       <Faq />
-      {/* Footer */}
-      <Footer />
     </div>
   );
 }
