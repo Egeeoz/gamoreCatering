@@ -1,11 +1,9 @@
-import Nav from './components/Nav';
 import Hero from './components/Hero';
 import Features from './components/Features';
 import Menu from './components/Menu';
 import About from './components/About';
 import Contact from './components/Contact';
 import Faq from './components/Faq';
-import Footer from './components/Footer';
 
 import Link from 'next/link';
 import Image from 'next/image';
@@ -18,7 +16,7 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#FAF9F6]">
+    <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <Hero />
       {/* Features Section */}
