@@ -50,7 +50,10 @@ export default function Footer() {
           </div>
         </div>
         <div className="border-t border-border-color pt-6 md:pt-8 text-center text-xs md:text-sm text-foreground-secondary">
-          <p>&copy; 2024 Gamore Catering Stockholm. All rights reserved.</p>
+          <p>
+            &copy; {new Date().getFullYear()} Gamore Catering Stockholm. All
+            rights reserved.
+          </p>
         </div>
       </div>
     </footer>
