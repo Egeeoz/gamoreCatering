@@ -9,25 +9,10 @@ export default function Nav() {
             Amore Catering
           </h2>
         </div>
-        <div className="flex gap-4 md:gap-8 text-foreground text-sm md:text-base mt-2 md:mt-0">
-          <Link
-            href="#meny"
-            className="transition-colors hover:text-accent-hover"
-          >
-            Meny
-          </Link>
-          <Link
-            href="#om"
-            className="transition-colors hover:text-accent-hover"
-          >
-            Om Oss
-          </Link>
-          <Link
-            href="#kontakt"
-            className="transition-colors hover:text-accent-hover"
-          >
-            Kontakt
-          </Link>
+        <div className="flex gap-4 md:gap-8 text-foreground text-sm md:text-base mt-2 md:mt-0 [&_a]:hover:text-accent [&_a]:hover:border-b-accent [&_a]:border-b-transparent [&_a]:border-b-[1.5px] [&_a]:transition-colors [&_a]:duration-300">
+          <Link href="#meny">Meny</Link>
+          <Link href="#om">Om Oss</Link>
+          <Link href="#kontakt">Kontakt</Link>
         </div>
       </nav>
     </header>
