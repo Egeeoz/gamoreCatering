@@ -1,15 +1,24 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Hero() {
   return (
-    <section className="bg-background">
-      <div className="max-w-6xl mx-auto px-4 md:px-6 py-6">
+    <section className="relative py-20 md:py-32 overflow-hidden">
+      <Image
+        src="/catering.webp"
+        alt="Premium Catering Background"
+        fill
+        priority
+        className="object-cover object-center"
+      />
+      <div className="absolute inset-0 bg-black/40"></div>
+      <div className="max-w-6xl mx-auto px-4 md:px-6 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
           <div>
-            <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight text-accent">
+            <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight text-white">
               Premium Catering för Stockholm
             </h1>
-            <p className="text-base md:text-lg mb-8 leading-relaxed text-foreground-secondary">
+            <p className="text-base md:text-lg mb-8 leading-relaxed text-gray-100">
               Vi levererar autentisk, hemlagad mat med gourmet-känsla. Perfekt
               för företagsevenemang, bröllop och privata fester. Lokal, färsk
               och personligt lagad.
@@ -28,9 +37,6 @@ export default function Hero() {
                 Se Meny
               </Link>
             </div>
-          </div>
-          <div className="bg-background-secondary border border-border-color rounded-lg h-64 md:h-80 flex items-center justify-center">
-            <p className="text-foreground-muted">Catering showcase image</p>
           </div>
         </div>
       </div>
