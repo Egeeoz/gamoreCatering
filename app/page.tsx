@@ -4,8 +4,6 @@ import Menu from './components/Menu';
 import About from './components/About';
 import Contact from './components/Contact';
 import Faq from './components/Faq';
-
-import Link from 'next/link';
 import Image from 'next/image';
 
 export const metadata = {
@@ -24,6 +22,15 @@ export default function Home() {
       {/* Menu Section */}
       <Menu />
       {/* About Section */}
+      <div className="w-full h-150 relative">
+        <Image
+          src="/catering2.webp"
+          alt="Premium Catering Background"
+          priority
+          fill
+          className="object-cover object-center"
+        />
+      </div>
       <About />
       {/* Contact Section */}
       <Contact />

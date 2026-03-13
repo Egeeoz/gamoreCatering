@@ -16,9 +16,9 @@ export default function Hero() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
           <div>
             <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight text-white">
-              Premium Catering för Stockholm
+              Premium Catering i Stockholm
             </h1>
-            <p className="text-base md:text-lg mb-8 leading-relaxed text-gray-100">
+            <p className="text-base md:text-lg mb-8 leading-relaxed text-gray-100 backdrop-blur-sm p-2 rounded-md">
               Vi levererar autentisk, hemlagad mat med gourmet-känsla. Perfekt
               för företagsevenemang, bröllop och privata fester. Lokal, färsk
               och personligt lagad.
@@ -26,13 +26,13 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-4 [&_a]:hover:-translate-y-2 [&_a]:transition-all [&_a]:duration-300 [&_a]:rounded [&_a]:px-6 [&_a]:md:px-8 [&_a]:py-2 [&_a]:md:py-3">
               <Link
                 href="#kontakt"
-                className="bg-accent text-background hover:bg-accent-hover   font-medium text-center md:text-left"
+                className="bg-accent text-background font-medium text-center md:text-left"
               >
                 Boka Catering
               </Link>
               <Link
                 href="#meny"
-                className="border-2 border-accent backdrop-blur-sm text-white font-medium text-center md:text-left"
+                className="border-2 backdrop-blur-sm text-background font-medium text-center md:text-left"
               >
                 Se Meny
               </Link>

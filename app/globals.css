@@ -1,62 +1,22 @@
 @import 'tailwindcss';
 
 :root {
-  /* Custom Light Theme Color Palette */
-  --olive-leaf: #606c38ff;
-  --black-forest: #283618ff;
-  --cornsilk: #fefae0ff;
-  --sunlit-clay: #dda15eff;
-  --copperwood: #bc6c25ff;
-
-  /* Light Theme - Primary Colors (Hex) */
-  --background: #fefae0ff;
-  --background-secondary: #fffbf0ff;
-  --background-tertiary: #f5f1e8ff;
-
-  /* Text Colors (Hex) */
-  --foreground: #283618ff;
-  --foreground-secondary: #606c38ff;
-  --foreground-muted: #8b8566ff;
-
-  /* Brand Colors */
-  --accent: #bc6c25ff;
-  --accent-hover: #a85d1dff;
-  --accent-light: #dda15eff;
-  --accent-dark: #9b5b1aff;
-
-  /* Semantic Colors (Hex) */
-  --brand-red: #dc2626;
-  --border-color: #d4cfc1ff;
-  --border-light: #e8e3d8ff;
-
-  /* Background Highlights (Hex) */
-  --bg-hover: #f5f1e8ff;
-  --bg-active: #ede7dcff;
-
-  /* Tailwind RGB Format Colors */
-  --background-rgb: 254 250 224;
-  --background-secondary-rgb: 255 251 240;
-  --background-tertiary-rgb: 245 241 232;
-
-  --foreground-rgb: 40 54 24;
-  --foreground-secondary-rgb: 96 108 56;
-  --foreground-muted-rgb: 139 133 102;
-
-  --accent-rgb: 188 108 37;
-  --accent-hover-rgb: 168 93 29;
-  --accent-light-rgb: 221 161 94;
-  --accent-dark-rgb: 155 91 26;
-
-  --brand-red-rgb: 220 38 38;
-  --border-color-rgb: 212 207 193;
-  --border-light-rgb: 232 227 216;
+  --color-amber-primary: #b45309;
+  --color-amber-light: #d97706;
+  --color-amber-dark: #92400e;
+  --color-cream: #faf9f6;
+  --dark-grey: #2c2c2c;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-accent: var(--accent);
-  --color-red: var(--brand-red);
+  --color-amber-primary: #b45309;
+  --color-amber-light: #d97706;
+  --color-amber-dark: #92400e;
+  --color-cream: #faf9f6;
+  --color-background: var(--color-cream);
+  --color-foreground: var(--dark-grey);
+  --color-accent: var(--color-amber-primary);
+  --color-title: var(--color-amber-dark);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -107,7 +67,7 @@ article:hover {
 }
 
 /* Scrollbar styling (webkit browsers) */
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   width: 8px;
 }
 
@@ -122,4 +82,4 @@ article:hover {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #92400e;
-}
+} */
