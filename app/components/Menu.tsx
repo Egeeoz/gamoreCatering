@@ -11,8 +11,13 @@ export default function Menu() {
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
         <article className="border border-border-color rounded-lg overflow-hidden hover:shadow-lg transition bg-background-secondary">
-          <div className="w-full h-40 md:h-48 object-cover relative overflow-hidden">
-            <Image src="/catering.webp" alt="Menu Food" fill />
+          <div className="w-full h-40 md:h-48 object-cover overflow-hidden">
+            <Image
+              src="/catering.webp"
+              alt="Menu Food"
+              height={1440}
+              width={1920}
+            />
           </div>
           <div className="p-4 md:p-6">
             <h3 className="text-lg md:text-xl font-bold mb-3 text-accent">
@@ -32,8 +37,13 @@ export default function Menu() {
         </article>
 
         <article className="border border-border-color rounded-lg overflow-hidden hover:shadow-lg transition bg-background-secondary">
-          <div className="w-full h-40 md:h-48 object-cover relative overflow-hidden">
-            <Image src="/catering.webp" alt="Menu Food" fill />
+          <div className="w-full h-40 md:h-48 object-cover overflow-hidden">
+            <Image
+              src="/catering.webp"
+              alt="Menu Food"
+              height={1440}
+              width={1920}
+            />
           </div>
           <div className="p-4 md:p-6">
             <h3 className="text-lg md:text-xl font-bold mb-3 text-accent">
@@ -53,8 +63,13 @@ export default function Menu() {
         </article>
 
         <article className="border border-border-color rounded-lg overflow-hidden hover:shadow-lg transition bg-background-secondary">
-          <div className="w-full h-40 md:h-48 object-cover relative overflow-hidden">
-            <Image src="/catering.webp" alt="Menu Food" fill />
+          <div className="w-full h-40 md:h-48 object-cover overflow-hidden">
+            <Image
+              src="/catering.webp"
+              alt="Menu Food"
+              height={1440}
+              width={1920}
+            />
           </div>
           <div className="p-4 md:p-6">
             <h3 className="text-lg md:text-xl font-bold mb-3 text-accent">

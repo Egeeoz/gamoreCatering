@@ -18,10 +18,10 @@ export default function Contact() {
               <p className="font-semibold mb-1">Telefon</p>
               <p>
                 <a
-                  href="tel:+46701234567"
+                  href="tel:+08 30 42 70"
                   className="hover:text-accent-hover transition"
                 >
-                  070 123 45 67
+                  08 30 42 70
                 </a>
               </p>
             </div>
@@ -42,37 +42,53 @@ export default function Contact() {
             </div>
             <div>
               <p className="font-semibold mb-1">Öppettider</p>
-              <p>Mån-Lör: 10:00 - 20:00</p>
+              <p>Måndag - Stängt</p>
+              <p>Tisdag - Torsdag: 13:00 - 20:00</p>
+              <p>Fredag - Söndag: 13:00 - 21:00</p>
             </div>
           </div>
         </div>
         <form className="border border-border-color rounded-lg p-4 md:p-8 bg-background-secondary">
           <div className="space-y-4">
             <div>
-              <label className="block font-medium mb-2 text-accent text-sm md:text-base">
+              <label
+                htmlFor="name"
+                className="block font-medium mb-2 text-accent text-sm md:text-base"
+              >
                 Namn
               </label>
               <input
+                id="name"
                 type="text"
                 className="w-full rounded px-4 py-2 bg-background text-foreground border border-border-color focus:outline-none focus:border-accent text-sm"
                 placeholder="Ditt namn"
               />
             </div>
             <div>
-              <label className="block font-medium mb-2 text-accent text-sm md:text-base">
+              <label
+                htmlFor="email"
+                className="block font-medium mb-2 text-accent text-sm md:text-base"
+              >
                 E-post
               </label>
               <input
+                id="email"
                 type="email"
                 className="w-full rounded px-4 py-2 bg-background text-foreground border border-border-color focus:outline-none focus:border-accent text-sm"
                 placeholder="din@email.se"
               />
             </div>
             <div>
-              <label className="block font-medium mb-2 text-accent text-sm md:text-base">
+              <label
+                htmlFor="event"
+                className="block font-medium mb-2 text-accent text-sm md:text-base"
+              >
                 Typ av Event
               </label>
-              <select className="w-full rounded px-4 py-2 bg-background text-foreground border border-border-color focus:outline-none focus:border-accent text-sm">
+              <select
+                id="event"
+                className="w-full rounded px-4 py-2 bg-background text-foreground border border-border-color focus:outline-none focus:border-accent text-sm"
+              >
                 <option>Välj typ av event</option>
                 <option>Företagsevenemang</option>
                 <option>Bröllop</option>
@@ -82,20 +98,28 @@ export default function Contact() {
               </select>
             </div>
             <div>
-              <label className="block font-medium mb-2 text-accent text-sm md:text-base">
+              <label
+                htmlFor="amountGuests"
+                className="block font-medium mb-2 text-accent text-sm md:text-base"
+              >
                 Antal gäster
               </label>
               <input
+                id="amountGuests"
                 type="number"
                 className="w-full rounded px-4 py-2 bg-background text-foreground border border-border-color focus:outline-none focus:border-accent text-sm"
                 placeholder="Cirka antal"
               />
             </div>
             <div>
-              <label className="block font-medium mb-2 text-accent text-sm md:text-base">
+              <label
+                htmlFor="message"
+                className="block font-medium mb-2 text-accent text-sm md:text-base"
+              >
                 Meddelande
               </label>
               <textarea
+                id="message"
                 rows={4}
                 className="w-full rounded px-4 py-2 bg-background text-foreground border border-border-color focus:outline-none focus:border-accent text-sm"
                 placeholder="Berätta om din event..."
