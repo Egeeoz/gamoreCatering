@@ -25,15 +25,15 @@ export default function Footer() {
         <rect width="100%" height="100%" fill="url(#spike-pattern-footer)" />
       </svg>
       <section className="flex flex-col items-center gap-2 text-center">
-        <h2>CATERING PÅ HORNSTULL</h2>
+        <h2>CATERING I STOCKHOLM</h2>
         <p className="md:w-[60%] w-[90%] text-sm">
           Amore Catering, Premium catering tjänster i Stockholm. Hemlagad mat
-          med gourmet-känsla för alla tillfällen.
+          med gourmet känsla för alla tillfällen.
         </p>
       </section>
       <section className="flex flex-col gap-2 items-center">
         <h2>KONTAKTA OSS</h2>
-        <address className="*:not-italic text-center flex flex-col gap-1.5 *:hover:text-amber-light *:ease-in-out *:transition *:cursor-pointer">
+        <address className="*:not-italic text-center flex flex-col gap-1.5 *:hover:text-amber-light *:ease-in-out *:transition *:cursor-pointer *:w-fit *:mx-auto">
           <a
             className="address"
             href="https://www.google.com/maps/place/H%C3%B6galidsgatan+13B,+117+30+Stockholm/@59.3179318,18.030397,555m/data=!3m2!1e3!4b1!4m6!3m5!1s0x465f77c516626cd1:0xb5c0102197626147!8m2!3d59.3179291!4d18.0329719!16s%2Fg%2F11csj91byp?entry=ttu&g_ep=EgoyMDI2MDMxMC4wIKXMDSoASAFQAw%3D%3D"
@@ -45,9 +45,6 @@ export default function Footer() {
 
           <a className="email" href="mailto:info@gamore.se">
             info@gamore.se
-          </a>
-          <a className="phone" href="tel:+46707961666">
-            070 796 16 66
           </a>
           <a className="phone" href="tel:+08304270">
             08 30 42 70

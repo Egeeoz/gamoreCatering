@@ -56,10 +56,10 @@ export default function Hero() {
               för företagsevenemang, bröllop och privata fester. Lokal, färsk
               och personligt lagad.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 [&_a]:hover:-translate-y-2 [&_a]:transition-all [&_a]:duration-300 [&_a]:rounded [&_a]:px-6 [&_a]:md:px-8 [&_a]:py-2 [&_a]:md:py-3">
+            <div className="flex flex-col sm:flex-row gap-4 [&_a]:hover:-translate-y-2 [&_a]:transition-all [&_a]:duration-300 [&_a]:rounded [&_a]:px-6 [&_a]:md:px-8 [&_a]:py-2 [&_a]:md:py-3 [&_a]:uppercase">
               <Link
                 href="#kontakt"
-                className="bg-accent text-background font-medium text-center md:text-left"
+                className="bg-accent text-background font-medium text-center md:text-left flex items-center"
                 onClick={() => handleClick('#kontakt')}
               >
                 Boka Catering

@@ -2,18 +2,10 @@ import Nav from './components/Nav';
 import Footer from './components/Footer';
 
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Source_Sans_3, Indie_Flower } from 'next/font/google';
 import './globals.css';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-});
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
-});
+const sourceSans3 = Source_Sans_3({});
 
 export const metadata: Metadata = {
   title: 'Gamore Catering | Premium Catering Stockholm | Hemlagat & Gourmet',
@@ -42,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="sv">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
+        className={`${sourceSans3.className} antialiased bg-background text-foreground`}
       >
         <main>
           <Nav />
