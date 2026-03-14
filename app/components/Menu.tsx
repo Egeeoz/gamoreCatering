@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function Menu() {
   return (
     <section
@@ -9,69 +11,63 @@ export default function Menu() {
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
         <article className="border border-border-color rounded-lg overflow-hidden hover:shadow-lg transition bg-background-secondary">
-          <div className="bg-background-tertiary h-40 md:h-48 flex items-center justify-center">
-            <p className="text-foreground-muted text-sm md:text-base">
-              Klassisk Middag
-            </p>
+          <div className="w-full h-40 md:h-48 object-cover relative overflow-hidden">
+            <Image src="/catering.webp" alt="Menu Food" fill />
           </div>
           <div className="p-4 md:p-6">
             <h3 className="text-lg md:text-xl font-bold mb-3 text-accent">
-              Klassisk Middag
+              Exempel
             </h3>
             <p className="text-xs md:text-sm mb-4 text-foreground-secondary">
-              Traditionell meny med nordiska smaker. Perfekt för formella
-              evenemang och affärsmiddagar.
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores,
+              explicabo?
             </p>
             <ul className="text-xs md:text-sm space-y-2 mb-4 text-foreground-muted">
-              <li>Förätt: Hemmagjord rödsoppa</li>
-              <li>Huvudrätt: Grillad entrecôte</li>
-              <li>Dessert: Chokladmousse</li>
+              <li>Förätt: Exempel</li>
+              <li>Huvudrätt: Exepel</li>
+              <li>Dessert: Exempel</li>
             </ul>
             <p className="font-bold text-accent">Från 395 SEK/person</p>
           </div>
         </article>
 
         <article className="border border-border-color rounded-lg overflow-hidden hover:shadow-lg transition bg-background-secondary">
-          <div className="bg-background-tertiary h-40 md:h-48 flex items-center justify-center">
-            <p className="text-foreground-muted text-sm md:text-base">
-              Medelhavet
-            </p>
+          <div className="w-full h-40 md:h-48 object-cover relative overflow-hidden">
+            <Image src="/catering.webp" alt="Menu Food" fill />
           </div>
           <div className="p-4 md:p-6">
             <h3 className="text-lg md:text-xl font-bold mb-3 text-accent">
-              Medelhavsmeny
+              Exempel
             </h3>
             <p className="text-xs md:text-sm mb-4 text-foreground-secondary">
-              Friska, ljusa smaker från Medelhavet. Idealisk för sommarevenemang
-              och casual gatherings.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat,
+              necessitatibus?
             </p>
             <ul className="text-xs md:text-sm space-y-2 mb-4 text-foreground-muted">
-              <li>Förätt: Handgjord mozzarella</li>
-              <li>Huvudrätt: Grill lax</li>
-              <li>Dessert: Citronpanna cotta</li>
+              <li>Förätt: Exempel</li>
+              <li>Huvudrätt: Exempel</li>
+              <li>Dessert: Exempel</li>
             </ul>
             <p className="font-bold text-accent">Från 365 SEK/person</p>
           </div>
         </article>
 
         <article className="border border-border-color rounded-lg overflow-hidden hover:shadow-lg transition bg-background-secondary">
-          <div className="bg-background-tertiary h-40 md:h-48 flex items-center justify-center">
-            <p className="text-foreground-muted text-sm md:text-base">
-              Vegetarisk
-            </p>
+          <div className="w-full h-40 md:h-48 object-cover relative overflow-hidden">
+            <Image src="/catering.webp" alt="Menu Food" fill />
           </div>
           <div className="p-4 md:p-6">
             <h3 className="text-lg md:text-xl font-bold mb-3 text-accent">
-              Vegetarisk Elegans
+              Exempel
             </h3>
             <p className="text-xs md:text-sm mb-4 text-foreground-secondary">
-              Sofisstikerad vegetarisk meny utan kompromisser. Gourmet-smaker
-              för alla preferenser.
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni,
+              saepe.
             </p>
             <ul className="text-xs md:text-sm space-y-2 mb-4 text-foreground-muted">
-              <li>Förätt: Rotfruktskräm</li>
-              <li>Huvudrätt: Pilzragu med pasta</li>
-              <li>Dessert: Jordgubbstårta</li>
+              <li>Förätt: Exempel</li>
+              <li>Huvudrätt: Exempel</li>
+              <li>Dessert: Exempel</li>
             </ul>
             <p className="font-bold text-accent">Från 345 SEK/person</p>
           </div>
