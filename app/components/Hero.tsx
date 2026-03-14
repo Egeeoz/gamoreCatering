@@ -1,7 +1,40 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
+import { Smokum } from 'next/font/google';
 
 export default function Hero() {
+  const [isScrolled, setIsScrolled] = useState();
+
+  useEffect(() => {
+    const scrollToHash = () => {
+      const id = window.location.hash.slice(1);
+      if (id) {
+        setTimeout(() => {
+          const element = document.getElementById(id);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 0);
+      }
+    };
+
+    // Scroll on initial mount and hash change
+    scrollToHash();
+    window.addEventListener('hashchange', scrollToHash);
+    return () => window.removeEventListener('hashchange', scrollToHash);
+  }, []);
+
+  const handleClick = (href: string) => {
+    const id = href.slice(1);
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="relative py-20 md:py-32 overflow-hidden">
       <Image
@@ -27,12 +60,14 @@ export default function Hero() {
               <Link
                 href="#kontakt"
                 className="bg-accent text-background font-medium text-center md:text-left"
+                onClick={() => handleClick('#kontakt')}
               >
                 Boka Catering
               </Link>
               <Link
                 href="#meny"
                 className="border-2 backdrop-blur-sm text-background font-medium text-center md:text-left"
+                onClick={() => handleClick('#meny')}
               >
                 Se Meny
               </Link>

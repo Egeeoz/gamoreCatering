@@ -27,7 +27,7 @@ export default function Footer() {
       <section className="flex flex-col items-center gap-2 text-center">
         <h2>CATERING PÅ HORNSTULL</h2>
         <p className="md:w-[60%] w-[90%] text-sm">
-          Amore Catering, Premium catering-tjänster i Stockholm. Hemlagad mat
+          Amore Catering, Premium catering tjänster i Stockholm. Hemlagad mat
           med gourmet-känsla för alla tillfällen.
         </p>
       </section>
