@@ -35,16 +35,16 @@ export default function Nav() {
 
   return (
     <header
-      className={`sticky top-0 z-50 h-23 transition-all duration-300 ${
-        isScrolled ? 'bg-background/80 backdrop-blur-lg' : 'bg-background'
+      className={`sticky top-0 z-50 transition-all duration-300 ${
+        isScrolled
+          ? 'bg-background/80 backdrop-blur-lg shadow-sm'
+          : 'bg-background'
       }`}
     >
-      <nav className="flex flex-col md:flex-row items-center justify-between md:gap-8 px-4 md:px-6 py-4 md:w-[80%] h-full mx-auto">
-        <div>
-          <h2 className="text-lg md:text-2xl font-bold leading-none text-title uppercase border-b-2">
-            Amore Catering
-          </h2>
-        </div>
+      <nav className="flex flex-col md:flex-row items-center justify-between md:gap-8 px-6 md:px-12 lg:px-20 py-4 h-full mx-auto max-w-350">
+        <h2 className="text-lg md:text-2xl font-bold leading-none text-title uppercase border-b-2 border-accent">
+          Amore Catering
+        </h2>
         <div className="flex gap-4 md:gap-8 text-foreground text-sm md:text-base mt-2 md:mt-0 [&_a]:hover:text-accent [&_a]:hover:border-b-accent [&_a]:border-b-transparent [&_a]:border-b-[1.5px] [&_a]:transition-colors [&_a]:duration-300 [&_a]:uppercase">
           <Link href="#meny" onClick={() => handleLinkClick('#meny')}>
             Meny
@@ -53,7 +53,7 @@ export default function Nav() {
             Om Oss
           </Link>
           <Link href="#kontakt" onClick={() => handleLinkClick('#kontakt')}>
-            Kontakt
+            Boka
           </Link>
         </div>
       </nav>

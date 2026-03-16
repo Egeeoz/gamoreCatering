@@ -2,12 +2,9 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
-import { Smokum } from 'next/font/google';
+import { useEffect } from 'react';
 
 export default function Hero() {
-  const [isScrolled, setIsScrolled] = useState();
-
   useEffect(() => {
     const scrollToHash = () => {
       const id = window.location.hash.slice(1);
@@ -36,45 +33,42 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative py-20 md:py-32 overflow-hidden">
+    <div className="relative py-24 md:py-40 overflow-hidden">
       <Image
-        src="/catering.webp"
-        alt="Premium Catering Background"
+        src="/catering-hero.webp"
         fill
-        priority
-        className="object-cover object-center"
+        alt="Premium Catering Background"
+        className="absolute inset-0 w-full h-full object-cover object-center"
       />
-      <div className="absolute inset-0 bg-black/40"></div>
-      <div className="max-w-6xl mx-auto px-4 md:px-6 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
-          <div>
-            <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight text-white">
-              Premium Catering i Stockholm
-            </h1>
-            <p className="text-base md:text-lg mb-8 leading-relaxed text-gray-100 backdrop-blur-sm p-2 rounded-md">
-              Vi levererar autentisk, hemlagad mat med gourmet-känsla. Perfekt
-              för företagsevenemang, bröllop och privata fester. Lokal, färsk
-              och personligt lagad.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 [&_a]:hover:-translate-y-2 [&_a]:transition-all [&_a]:duration-300 [&_a]:rounded [&_a]:px-6 [&_a]:md:px-8 [&_a]:py-2 [&_a]:md:py-3 [&_a]:uppercase">
-              <Link
-                href="#kontakt"
-                className="bg-accent text-background font-medium text-center md:text-left flex items-center"
-                onClick={() => handleClick('#kontakt')}
-              >
-                Boka Catering
-              </Link>
-              <Link
-                href="#meny"
-                className="border-2 backdrop-blur-sm text-background font-medium text-center md:text-left"
-                onClick={() => handleClick('#meny')}
-              >
-                Se Meny
-              </Link>
-            </div>
+      <div className="absolute inset-0 bg-foreground/50" />
+      <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20 relative z-10">
+        <section className="max-w-2xl">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-background">
+            Premium Catering i Stockholm
+          </h1>
+          <p className="text-base md:text-lg mb-8 leading-relaxed text-secondary backdrop-blur-sm bg-foreground/20 p-4 rounded-md">
+            Vi levererar autentisk, hemlagad mat med gourmet känsla. Perfekt för
+            företagsevenemang, bröllop och privata fester. Lokal, färsk och
+            personligt lagad.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Link
+              href="#kontakt"
+              onClick={() => handleClick('#kontakt')}
+              className="flex items-center bg-accent text-background font-medium text-center px-8 py-3 rounded uppercase hover:-translate-y-1 transition-all duration-300"
+            >
+              Boka Catering
+            </Link>
+            <Link
+              href="#meny"
+              onClick={() => handleClick('#meny')}
+              className="border-2 border-background/60 backdrop-blur-sm text-background font-medium text-center px-8 py-3 rounded uppercase hover:-translate-y-1 hover:border-background transition-all duration-300"
+            >
+              Se Meny
+            </Link>
           </div>
-        </div>
+        </section>
       </div>
-    </section>
+    </div>
   );
 }

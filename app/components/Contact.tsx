@@ -1,4 +1,50 @@
+'use client';
+
+import { sendFormEmail } from '@/app/actions/email';
+import { useState } from 'react';
+
 export default function Contact() {
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState('');
+  const [message, setMessage] = useState('');
+  console.log(status);
+
+  const handleSubmit = async (e: React.SubmitEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    setLoading(true);
+    setMessage('');
+
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get('name'),
+      email: formData.get('email'),
+      event: formData.get('event'),
+      amountGuests: formData.get('amountGuests'),
+      message: formData.get('message') || '',
+    };
+
+    try {
+      const result = await sendFormEmail(data);
+      console.log('Result from server:', result);
+      console.log('Type of result:', typeof result);
+      console.log('result.success:', result?.success);
+      if (result.success) {
+        setMessage('Förfrågan skickad! Vi kontaktar dig snart.');
+        setStatus('success');
+        form.reset();
+      } else {
+        setMessage('Ett fel uppstod. Försök igen senare.');
+        setStatus('error');
+      }
+    } catch (error) {
+      setMessage('Ett fel uppstod. Försök igen senare.');
+      setStatus('error');
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <section
       id="kontakt"
@@ -48,7 +94,10 @@ export default function Contact() {
             </div>
           </div>
         </div>
-        <form className="border border-border-color rounded-lg p-4 md:p-8 bg-background-secondary">
+        <form
+          onSubmit={handleSubmit}
+          className="border border-border-color rounded-lg p-4 md:p-8 bg-background-secondary"
+        >
           <div className="space-y-4">
             <div>
               <label
@@ -59,7 +108,9 @@ export default function Contact() {
               </label>
               <input
                 id="name"
+                name="name"
                 type="text"
+                required
                 className="w-full rounded px-4 py-2 bg-background text-foreground border border-border-color focus:outline-none focus:border-accent text-sm"
                 placeholder="Ditt namn"
               />
@@ -73,7 +124,9 @@ export default function Contact() {
               </label>
               <input
                 id="email"
+                name="email"
                 type="email"
+                required
                 className="w-full rounded px-4 py-2 bg-background text-foreground border border-border-color focus:outline-none focus:border-accent text-sm"
                 placeholder="din@email.se"
               />
@@ -87,6 +140,8 @@ export default function Contact() {
               </label>
               <select
                 id="event"
+                name="event"
+                required
                 className="w-full rounded px-4 py-2 bg-background text-foreground border border-border-color focus:outline-none focus:border-accent text-sm"
               >
                 <option>Välj typ av event</option>
@@ -106,7 +161,9 @@ export default function Contact() {
               </label>
               <input
                 id="amountGuests"
+                name="amountGuests"
                 type="number"
+                required
                 className="w-full rounded px-4 py-2 bg-background text-foreground border border-border-color focus:outline-none focus:border-accent text-sm"
                 placeholder="Cirka antal"
               />
@@ -120,16 +177,29 @@ export default function Contact() {
               </label>
               <textarea
                 id="message"
+                name="message"
                 rows={4}
                 className="w-full rounded px-4 py-2 bg-background text-foreground border border-border-color focus:outline-none focus:border-accent text-sm"
                 placeholder="Berätta om din event..."
               />
             </div>
+            {message && (
+              <div
+                className={`p-3 rounded text-sm text-center ${
+                  status === 'success'
+                    ? 'bg-green-100 text-green-800'
+                    : 'bg-red-100 text-red-800'
+                }`}
+              >
+                {message}
+              </div>
+            )}
             <button
               type="submit"
-              className="w-full py-2 md:py-3 rounded font-medium bg-accent text-background hover:bg-accent-hover transition text-sm md:text-base"
+              disabled={loading}
+              className="w-full py-2 md:py-3 rounded font-medium bg-accent text-background hover:bg-accent-hover transition text-sm md:text-base disabled:opacity-50"
             >
-              Skicka Förfrågan
+              {loading ? 'Skickar...' : 'Skicka Förfrågan'}
             </button>
           </div>
         </form>

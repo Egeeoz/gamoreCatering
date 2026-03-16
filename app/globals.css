@@ -1,22 +1,38 @@
 @import 'tailwindcss';
 
 :root {
-  --color-amber-primary: #b45309;
-  --color-amber-light: #d97706;
-  --color-amber-dark: #92400e;
-  --color-cream: #faf9f6;
-  --dark-grey: #2c2c2c;
+  --background: 40 33% 97%;
+  --foreground: 0 0% 17%;
+  --card: 40 33% 97%;
+  --card-foreground: 0 0% 17%;
+  --popover: 40 33% 97%;
+  --popover-foreground: 0 0% 17%;
+  --primary: 28 91% 37%;
+  --primary-foreground: 40 33% 97%;
+  --secondary: 40 20% 92%;
+  --secondary-foreground: 0 0% 17%;
+  --muted: 40 20% 92%;
+  --muted-foreground: 0 0% 40%;
+  --accent: 28 91% 37%;
+  --accent-foreground: 40 33% 97%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 40 33% 97%;
+  --border: 30 15% 85%;
+  --input: 30 15% 85%;
+  --ring: 28 91% 37%;
+  --radius: 0.5rem;
+  --title: 24 85% 31%;
 }
 
 @theme inline {
-  --color-amber-primary: #b45309;
-  --color-amber-light: #d97706;
-  --color-amber-dark: #92400e;
-  --color-cream: #faf9f6;
-  --color-background: var(--color-cream);
-  --color-foreground: var(--dark-grey);
-  --color-accent: var(--color-amber-primary);
-  --color-title: var(--color-amber-dark);
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-accent: hsl(var(--accent));
+  --color-title: hsl(var(--title));
+  --color-border: hsl(var(--border));
+  --color-secondary: hsl(var(--secondary));
+  --color-muted: hsl(var(--muted));
+  --color-card: hsl(var(--card));
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -26,13 +42,24 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+@layer base {
+  * {
+    @apply border-border;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 
-/* Semantic HTML optimization */
-section {
-  scroll-margin-top: 85px;
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  section {
+    scroll-margin-top: 85px;
+  }
 }
 
 h1 {
@@ -47,17 +74,6 @@ h3 {
   font-size: clamp(1.25rem, 2vw, 1.5rem);
 }
 
-/* Article cards */
-/* article {
-  transition: all 0.3s ease;
-}
-
-article:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(120, 53, 15, 0.1);
-} */
-
-/* Accessibility */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;
@@ -65,21 +81,3 @@ article:hover {
     transition-duration: 0.01ms !important;
   }
 }
-
-/* Scrollbar styling (webkit browsers) */
-/* ::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--background);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--accent);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #92400e;
-} */
