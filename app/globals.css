@@ -42,24 +42,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-@layer base {
-  * {
-    @apply border-border;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
+html {
+  scroll-behavior: smooth;
+}
 
-  html {
-    scroll-behavior: smooth;
-  }
-
-  body {
-    @apply bg-background text-foreground font-sans;
-  }
-
-  section {
-    scroll-margin-top: 85px;
-  }
+section {
+  scroll-margin-top: 85px;
 }
 
 h1 {
