@@ -54,14 +54,14 @@ export default function Contact() {
         Boka Din Catering
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-        <div>
-          <p className="mb-6 leading-relaxed text-foreground-secondary text-sm md:text-base">
+        <section>
+          <h4 className="mb-6 leading-relaxed text-foreground-secondary text-sm md:text-base">
             Kontakta oss idag för att diskutera din event. Vi svarar snabbt och
             hjälper dig planera en perfekt meny som passa era behov och budget.
-          </p>
-          <div className="space-y-4 text-accent text-sm md:text-base">
-            <div>
-              <p className="font-semibold mb-1">Telefon</p>
+          </h4>
+          <div className="space-y-4 text-sm md:text-base [&_h5]:text-accent [&_p]:text-foreground/80">
+            <section>
+              <h5 className="font-semibold mb-1">Telefon</h5>
               <p>
                 <a
                   href="tel:+08 30 42 70"
@@ -70,9 +70,9 @@ export default function Contact() {
                   08 30 42 70
                 </a>
               </p>
-            </div>
-            <div>
-              <p className="font-semibold mb-1">E-post</p>
+            </section>
+            <section>
+              <h5 className="font-semibold mb-1">E-post</h5>
               <p>
                 <a
                   href="mailto:info@gamorecatering.se"
@@ -81,22 +81,22 @@ export default function Contact() {
                   info@gamorecatering.se
                 </a>
               </p>
-            </div>
-            <div>
-              <p className="font-semibold mb-1">Plats</p>
+            </section>
+            <section>
+              <h5 className="font-semibold mb-1">Plats</h5>
               <p>Stockholm, Sverige</p>
-            </div>
-            <div>
-              <p className="font-semibold mb-1">Öppettider</p>
+            </section>
+            <section>
+              <h5 className="font-semibold mb-1">Öppettider</h5>
               <p>Måndag - Stängt</p>
               <p>Tisdag - Torsdag: 13:00 - 20:00</p>
               <p>Fredag - Söndag: 13:00 - 21:00</p>
-            </div>
+            </section>
           </div>
-        </div>
+        </section>
         <form
           onSubmit={handleSubmit}
-          className="border border-border-color rounded-lg p-4 md:p-8 bg-background-secondary"
+          className="border border-border rounded-lg p-4 md:p-8 bg-secondary [&_input]:border-border [&_select]:border-border [&_textarea]:border-border [&_input]:w-full [&_input]:rounded [&_input]:px-4 [&_input]:py-2 [&_input]:bg-background [&_input]:text-foreground [&_input]:border [&_input]:focus:outline-none [&_input]:focus:border-accent [&_input]:text-sm"
         >
           <div className="space-y-4">
             <div>
@@ -111,7 +111,6 @@ export default function Contact() {
                 name="name"
                 type="text"
                 required
-                className="w-full rounded px-4 py-2 bg-background text-foreground border border-border-color focus:outline-none focus:border-accent text-sm"
                 placeholder="Ditt namn"
               />
             </div>
@@ -127,7 +126,6 @@ export default function Contact() {
                 name="email"
                 type="email"
                 required
-                className="w-full rounded px-4 py-2 bg-background text-foreground border border-border-color focus:outline-none focus:border-accent text-sm"
                 placeholder="din@email.se"
               />
             </div>
@@ -142,7 +140,7 @@ export default function Contact() {
                 id="event"
                 name="event"
                 required
-                className="w-full rounded px-4 py-2 bg-background text-foreground border border-border-color focus:outline-none focus:border-accent text-sm"
+                className="w-full rounded px-4 py-2 bg-background text-foreground border focus:outline-none focus:border-accent text-sm"
               >
                 <option>Välj typ av event</option>
                 <option>Företagsevenemang</option>
@@ -164,7 +162,6 @@ export default function Contact() {
                 name="amountGuests"
                 type="number"
                 required
-                className="w-full rounded px-4 py-2 bg-background text-foreground border border-border-color focus:outline-none focus:border-accent text-sm"
                 placeholder="Cirka antal"
               />
             </div>
@@ -179,7 +176,7 @@ export default function Contact() {
                 id="message"
                 name="message"
                 rows={4}
-                className="w-full rounded px-4 py-2 bg-background text-foreground border border-border-color focus:outline-none focus:border-accent text-sm"
+                className="w-full rounded px-4 py-2 bg-background text-foreground border focus:outline-none focus:border-accent text-sm"
                 placeholder="Berätta om din event..."
               />
             </div>
