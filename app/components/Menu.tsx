@@ -39,7 +39,7 @@ export default function Menu() {
       id="meny"
       className="bg-background py-12 md:py-20 border-t border-border"
     >
-      <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20">
+      <div className="max-w-350 mx-auto px-6 md:px-12 lg:px-20">
         <h2 className="text-2xl md:text-3xl font-bold mb-8 md:mb-12 text-accent">
           Exempelmenyer
         </h2>
