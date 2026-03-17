@@ -5,6 +5,7 @@ import nodemailer from 'nodemailer';
 interface FormData {
   name: string | FormDataEntryValue | null;
   email: string | FormDataEntryValue | null;
+  phoneNumber: string | FormDataEntryValue | null;
   event: string | FormDataEntryValue | null;
   amountGuests: string | FormDataEntryValue | null;
   message: string | FormDataEntryValue | null;
@@ -31,6 +32,7 @@ export async function sendFormEmail(data: FormData) {
       <h2>Ny Catering Förfrågan</h2>
       <p><strong>Namn:</strong> ${data.name}</p>
       <p><strong>E-post:</strong> ${data.email}</p>
+      <p><strong>Telefonnummer:</strong> ${data.phoneNumber}</p>
       <p><strong>Typ av Event:</strong> ${data.event}</p>
       <p><strong>Antal gäster:</strong> ${data.amountGuests}</p>
       <p><strong>Meddelande:</strong></p>

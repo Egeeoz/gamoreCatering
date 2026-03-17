@@ -19,6 +19,7 @@ export default function Contact() {
     const data = {
       name: formData.get('name'),
       email: formData.get('email'),
+      phoneNumber: formData.get('phoneNumber'),
       event: formData.get('event'),
       amountGuests: formData.get('amountGuests'),
       message: formData.get('message') || '',
@@ -26,9 +27,6 @@ export default function Contact() {
 
     try {
       const result = await sendFormEmail(data);
-      console.log('Result from server:', result);
-      console.log('Type of result:', typeof result);
-      console.log('result.success:', result?.success);
       if (result.success) {
         setMessage('Förfrågan skickad! Vi kontaktar dig snart.');
         setStatus('success');
@@ -131,6 +129,21 @@ export default function Contact() {
             </div>
             <div>
               <label
+                htmlFor="phoneNumber"
+                className="block font-medium mb-2 text-accent-muted text-sm md:text-base"
+              >
+                Telefonnummer
+              </label>
+              <input
+                id="phoneNumber"
+                name="phoneNumber"
+                type="tel"
+                required
+                placeholder="07....."
+              />
+            </div>
+            <div>
+              <label
                 htmlFor="event"
                 className="block font-medium mb-2 text-accent-muted text-sm md:text-base"
               >
@@ -177,7 +190,7 @@ export default function Contact() {
                 name="message"
                 rows={4}
                 className="w-full rounded px-4 py-2 bg-background text-foreground border focus:outline-none focus:border-accent text-sm"
-                placeholder="Berätta om din event..."
+                placeholder="Berätta om din event/särskilda önskemål..."
               />
             </div>
             {message && (
