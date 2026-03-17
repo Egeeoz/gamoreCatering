@@ -70,7 +70,7 @@ export default function Menu() {
                     <li key={i}>{item}</li>
                   ))}
                 </ul>
-                <p className="font-bold text-accent">{menu.price}</p>
+                <p className="font-bold text-accent-muted">{menu.price}</p>
               </div>
             </article>
           ))}

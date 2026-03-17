@@ -54,14 +54,14 @@ export default function Contact() {
         Boka Din Catering
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-        <section>
-          <h4 className="mb-6 leading-relaxed text-foreground-secondary text-sm md:text-base">
+        <div>
+          <p className="mb-6 leading-relaxed text-foreground-secondary text-sm md:text-base">
             Kontakta oss idag för att diskutera din event. Vi svarar snabbt och
             hjälper dig planera en perfekt meny som passa era behov och budget.
-          </h4>
-          <div className="space-y-4 text-sm md:text-base [&_h5]:text-accent [&_p]:text-foreground/80">
+          </p>
+          <div className="space-y-4 text-sm md:text-base [&_h3]:text-accent [&_p]:text-foreground/80">
             <section>
-              <h5 className="font-semibold mb-1">Telefon</h5>
+              <h3 className="font-semibold mb-1">Telefon</h3>
               <p>
                 <a
                   href="tel:+08 30 42 70"
@@ -72,7 +72,7 @@ export default function Contact() {
               </p>
             </section>
             <section>
-              <h5 className="font-semibold mb-1">E-post</h5>
+              <h3 className="font-semibold mb-1">E-post</h3>
               <p>
                 <a
                   href="mailto:info@gamorecatering.se"
@@ -83,17 +83,17 @@ export default function Contact() {
               </p>
             </section>
             <section>
-              <h5 className="font-semibold mb-1">Plats</h5>
+              <h3 className="font-semibold mb-1">Plats</h3>
               <p>Stockholm, Sverige</p>
             </section>
             <section>
-              <h5 className="font-semibold mb-1">Öppettider</h5>
+              <h3 className="font-semibold mb-1">Öppettider</h3>
               <p>Måndag - Stängt</p>
               <p>Tisdag - Torsdag: 13:00 - 20:00</p>
               <p>Fredag - Söndag: 13:00 - 21:00</p>
             </section>
           </div>
-        </section>
+        </div>
         <form
           onSubmit={handleSubmit}
           className="border border-border rounded-lg p-4 md:p-8 bg-secondary [&_input]:border-border [&_select]:border-border [&_textarea]:border-border [&_input]:w-full [&_input]:rounded [&_input]:px-4 [&_input]:py-2 [&_input]:bg-background [&_input]:text-foreground [&_input]:border [&_input]:focus:outline-none [&_input]:focus:border-accent [&_input]:text-sm"
@@ -102,7 +102,7 @@ export default function Contact() {
             <div>
               <label
                 htmlFor="name"
-                className="block font-medium mb-2 text-accent text-sm md:text-base"
+                className="block font-medium mb-2 text-accent-muted text-sm md:text-base"
               >
                 Namn
               </label>
@@ -117,7 +117,7 @@ export default function Contact() {
             <div>
               <label
                 htmlFor="email"
-                className="block font-medium mb-2 text-accent text-sm md:text-base"
+                className="block font-medium mb-2 text-accent-muted text-sm md:text-base"
               >
                 E-post
               </label>
@@ -132,7 +132,7 @@ export default function Contact() {
             <div>
               <label
                 htmlFor="event"
-                className="block font-medium mb-2 text-accent text-sm md:text-base"
+                className="block font-medium mb-2 text-accent-muted text-sm md:text-base"
               >
                 Typ av Event
               </label>
@@ -153,7 +153,7 @@ export default function Contact() {
             <div>
               <label
                 htmlFor="amountGuests"
-                className="block font-medium mb-2 text-accent text-sm md:text-base"
+                className="block font-medium mb-2 text-accent-muted text-sm md:text-base"
               >
                 Antal gäster
               </label>
@@ -168,7 +168,7 @@ export default function Contact() {
             <div>
               <label
                 htmlFor="message"
-                className="block font-medium mb-2 text-accent text-sm md:text-base"
+                className="block font-medium mb-2 text-accent-muted text-sm md:text-base"
               >
                 Meddelande
               </label>

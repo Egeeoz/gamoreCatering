@@ -25,7 +25,7 @@ export default function About() {
     >
       <div className="max-w-350 mx-auto px-6 md:px-12 lg:px-20">
         <h2 className="text-2xl md:text-3xl font-bold mb-8 text-accent">
-          Om Gamore Catering
+          Om Amore Catering
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
           <div>
@@ -52,7 +52,7 @@ export default function About() {
             <div className="space-y-4 text-foreground/80 text-sm md:text-base">
               {offerings.map((o, i) => (
                 <div key={i}>
-                  <p className="font-semibold text-accent">{o.title}</p>
+                  <p className="font-semibold text-accent-muted">{o.title}</p>
                   <p className="text-xs md:text-sm">{o.desc}</p>
                 </div>
               ))}
