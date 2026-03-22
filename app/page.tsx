@@ -7,7 +7,7 @@ import Faq from './components/Faq';
 import Image from 'next/image';
 
 export const metadata = {
-  title: 'Gamore Catering Stockholm | Premium Hemlagat Catering',
+  title: 'Amore Catering Stockholm | Premium Hemlagat Catering',
   description:
     'Premium catering-tjänster i Stockholm. Vi erbjuder färsk, hemlagad mat för företagsevenemang, bröllop och privata fester. Personlig service och gourmet-meny.',
 };
@@ -20,8 +20,8 @@ export default function Home() {
       {/* Features Section */}
       <Features />
       {/* Menu Section */}
-      <Menu />
-      <div className="w-full h-100 relative">
+      {/* <Menu /> */}
+      {/* <div className="w-full h-100 relative">
         <Image
           src="/catering-divider.webp"
           alt="Premium Catering Background"
@@ -29,7 +29,7 @@ export default function Home() {
           fill
           className="object-cover object-center"
         />
-      </div>
+      </div> */}
       {/* About Section */}
       <About />
       <div className="w-full h-100 relative">

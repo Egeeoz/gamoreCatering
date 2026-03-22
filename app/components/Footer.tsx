@@ -52,39 +52,6 @@ export default function Footer() {
         </address>
       </section>
       <section>
-        <h2 className="text-center pb-2">ÖPPETTIDER</h2>
-        <dl className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-2 [&_dt]:font-medium">
-          <div className="flex flex-col items-center">
-            <dt>Måndag</dt>
-            <dd>Stängt</dd>
-          </div>
-          <div className="flex flex-col items-center">
-            <dt>Tisdag</dt>
-            <dd>13 - 20</dd>
-          </div>
-          <div className="flex flex-col items-center">
-            <dt>Onsdag</dt>
-            <dd>13 - 20</dd>
-          </div>
-          <div className="flex flex-col items-center">
-            <dt>Torsdag</dt>
-            <dd>13 - 20</dd>
-          </div>
-          <div className="flex flex-col items-center">
-            <dt>Fredag</dt>
-            <dd>13 - 21</dd>
-          </div>
-          <div className="flex flex-col items-center">
-            <dt>Lördag</dt>
-            <dd>13 - 21</dd>
-          </div>
-          <div className="flex flex-col items-center last:col-span-2 last:md:col-span-1">
-            <dt>Söndag</dt>
-            <dd>13 - 21</dd>
-          </div>
-        </dl>
-      </section>
-      <section>
         <p className="uppercase text-background/80 pb-8 text-sm text-center">
           Copyright &copy; {new Date().getFullYear()} Amore Catering. Alla
           rättigheter förbehållna.

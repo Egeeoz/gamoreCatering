@@ -8,21 +8,21 @@ import './globals.css';
 const sourceSans3 = Source_Sans_3({});
 
 export const metadata: Metadata = {
-  title: 'Gamore Catering | Premium Catering Stockholm | Hemlagat & Gourmet',
+  title: 'Amore Catering | Premium Catering Stockholm | Hemlagat & Gourmet',
   description:
-    'Gamore Catering Stockholm - Premium catering-tjänster för företag, fester och evenemang. Färsk mat, personlig service och autentisk meny. Boka din catering idag.',
+    'Amore Catering Stockholm - Premium catering-tjänster för företag, fester och evenemang. Färsk mat, personlig service och autentisk meny. Boka din catering idag.',
   keywords: 'catering stockholm, catering företag, event catering, festmiddag',
-  authors: [{ name: 'Gamore Catering' }],
+  authors: [{ name: 'Amore Catering' }],
   openGraph: {
-    title: 'Gamore Catering Stockholm',
+    title: 'Amore Catering Stockholm',
     description: 'Premium catering för alla tillfällen',
-    url: 'https://gamorecatering.se',
-    siteName: 'Gamore Catering',
+    url: 'https://amorecatering.se',
+    siteName: 'amore Catering',
     locale: 'sv_SE',
     type: 'website',
   },
   alternates: {
-    canonical: 'https://gamorecatering.se',
+    canonical: 'https://amorecatering.se',
   },
 };
 

@@ -7,6 +7,9 @@ export default function Contact() {
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState('');
   const [message, setMessage] = useState('');
+  const [deliveryType, setDeliveryType] = useState<'delivery' | 'pickup' | ''>(
+    '',
+  );
 
   const handleSubmit = async (e: React.SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -21,6 +24,10 @@ export default function Contact() {
       phoneNumber: formData.get('phoneNumber'),
       event: formData.get('event'),
       amountGuests: formData.get('amountGuests'),
+      deliveryType: formData.get('deliveryType'),
+      deliveryAddress: formData.get('deliveryAddress') || '',
+      deliveryTime: formData.get('deliveryTime') || '',
+      pickupTime: formData.get('pickupTime') || '',
       message: formData.get('message') || '',
     };
 
@@ -30,6 +37,7 @@ export default function Contact() {
         setMessage('Förfrågan skickad! Vi kontaktar dig snart.');
         setStatus('success');
         form.reset();
+        setDeliveryType('');
       } else {
         setMessage('Ett fel uppstod. Försök igen senare.');
         setStatus('error');
@@ -82,12 +90,6 @@ export default function Contact() {
             <section>
               <h3 className="font-semibold mb-1">Plats</h3>
               <p>Stockholm, Sverige</p>
-            </section>
-            <section>
-              <h3 className="font-semibold mb-1">Öppettider</h3>
-              <p>Måndag - Stängt</p>
-              <p>Tisdag - Torsdag: 13:00 - 20:00</p>
-              <p>Fredag - Söndag: 13:00 - 21:00</p>
             </section>
           </div>
         </div>
@@ -177,6 +179,91 @@ export default function Contact() {
                 placeholder="Cirka antal"
               />
             </div>
+
+            <div>
+              <label
+                htmlFor="deliveryType"
+                className="block font-medium mb-2 text-accent-muted text-sm md:text-base"
+              >
+                Leverans eller Upphämtning
+              </label>
+              <select
+                id="deliveryType"
+                name="deliveryType"
+                required
+                value={deliveryType}
+                onChange={(e) =>
+                  setDeliveryType(e.target.value as 'delivery' | 'pickup')
+                }
+                className="w-full rounded px-4 py-2 bg-background text-foreground border focus:outline-none focus:border-accent text-sm"
+              >
+                <option value="">Välj alternativ</option>
+                <option value="delivery">Leverans</option>
+                <option value="pickup">Upphämtning</option>
+              </select>
+            </div>
+
+            {deliveryType === 'delivery' && (
+              <>
+                <div>
+                  <label
+                    htmlFor="deliveryAddress"
+                    className="block font-medium mb-2 text-accent-muted text-sm md:text-base"
+                  >
+                    Leveransadress
+                  </label>
+                  <input
+                    id="deliveryAddress"
+                    name="deliveryAddress"
+                    type="text"
+                    required={deliveryType === 'delivery'}
+                    placeholder="Gata, nummer, stad"
+                  />
+                </div>
+                <div>
+                  <label
+                    htmlFor="deliveryTime"
+                    className="block font-medium mb-2 text-accent-muted text-sm md:text-base"
+                  >
+                    Önskad leveranstid
+                  </label>
+                  <input
+                    id="deliveryTime"
+                    name="deliveryTime"
+                    type="datetime-local"
+                    required={deliveryType === 'delivery'}
+                  />
+                </div>
+              </>
+            )}
+
+            {deliveryType === 'pickup' && (
+              <>
+                <div className="bg-background p-4 rounded border border-border">
+                  <p className="text-sm md:text-base text-foreground font-medium mb-2">
+                    Upphämtningsadress:
+                  </p>
+                  <p className="text-sm md:text-base text-foreground/80">
+                    Stockholm, Sverige
+                  </p>
+                </div>
+                <div>
+                  <label
+                    htmlFor="pickupTime"
+                    className="block font-medium mb-2 text-accent-muted text-sm md:text-base"
+                  >
+                    Önskad upphämtningstid
+                  </label>
+                  <input
+                    id="pickupTime"
+                    name="pickupTime"
+                    type="datetime-local"
+                    required={deliveryType === 'pickup'}
+                  />
+                </div>
+              </>
+            )}
+
             <div>
               <label
                 htmlFor="message"
@@ -206,7 +293,7 @@ export default function Contact() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-2 md:py-3 rounded font-medium bg-accent text-background hover:bg-accent-hover transition text-sm md:text-base disabled:opacity-50"
+              className="w-full py-2 md:py-3 rounded font-medium bg-accent text-background hover:bg-accent-hover transition text-sm md:text-base disabled:opacity-50 cursor-pointer"
             >
               {loading ? 'Skickar...' : 'Skicka Förfrågan'}
             </button>

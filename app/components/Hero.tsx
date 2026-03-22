@@ -60,11 +60,12 @@ export default function Hero() {
               Boka Catering
             </Link>
             <Link
-              href="#meny"
-              onClick={() => handleClick('#meny')}
+              href="https://order.foodtec.se/gamore-catering/bestall-mat"
+              rel="noopener noreferrer"
+              target="_blank"
               className="border-2 border-background/60 backdrop-blur-sm text-background font-medium text-center px-8 py-3 rounded uppercase hover:-translate-y-1 hover:border-background transition-all duration-300"
             >
-              Se Meny
+              beställ online
             </Link>
           </div>
         </section>

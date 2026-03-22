@@ -30,7 +30,7 @@ export default function About() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
           <div>
             <p className="mb-4 leading-relaxed text-foreground/80 text-sm md:text-base">
-              Gamore Catering startades med en vision att leverera premium
+              Amore Catering startades med en vision att leverera premium
               catering till Stockholm. Vi tror på hemlagad mat med
               gourmet-känsla, där varje detalj spelar roll.
             </p>

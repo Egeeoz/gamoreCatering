@@ -60,8 +60,12 @@ export default function Nav() {
           <Link href="/">Amore Catering</Link>
         </h2>
         <div className="flex gap-4 md:gap-8 text-foreground text-sm md:text-base mt-2 md:mt-0 [&_a]:hover:text-accent [&_a]:transition-colors [&_a]:duration-300 [&_a]:uppercase">
-          <Link href="/#meny" onClick={() => handleLinkClick('#meny')}>
-            Meny
+          <Link
+            href="https://order.foodtec.se/gamore-catering/bestall-mat"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Beställ online
           </Link>
           <Link href="/#om" onClick={() => handleLinkClick('#om')}>
             Om Oss

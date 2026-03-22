@@ -8,6 +8,10 @@ interface FormData {
   phoneNumber: string | FormDataEntryValue | null;
   event: string | FormDataEntryValue | null;
   amountGuests: string | FormDataEntryValue | null;
+  deliveryType: string | FormDataEntryValue | null;
+  deliveryAddress: string | FormDataEntryValue | null;
+  deliveryTime: string | FormDataEntryValue | null;
+  pickupTime: string | FormDataEntryValue | null;
   message: string | FormDataEntryValue | null;
 }
 
@@ -28,6 +32,29 @@ export async function sendFormEmail(data: FormData) {
 
     console.log('Transporter created');
 
+    const formatDateTime = (dateTimeString: string) => {
+      if (!dateTimeString) return '-';
+      const date = new Date(dateTimeString);
+      return date.toLocaleString('sv-SE', {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+      });
+    };
+
+    const deliveryInfo =
+      data.deliveryType === 'delivery'
+        ? `
+        <p><strong>Leveransadress:</strong> ${data.deliveryAddress}</p>
+        <p><strong>Leveranstid:</strong> ${formatDateTime(String(data.deliveryTime))}</p>
+        `
+        : `
+        <p><strong>Upphämtning från:</strong> Stockholm, Sverige</p>
+        <p><strong>Upphämtningstid:</strong> ${formatDateTime(String(data.pickupTime))}</p>
+        `;
+
     const htmlContent = `
       <h2>Ny Catering Förfrågan</h2>
       <p><strong>Namn:</strong> ${data.name}</p>
@@ -35,6 +62,8 @@ export async function sendFormEmail(data: FormData) {
       <p><strong>Telefonnummer:</strong> ${data.phoneNumber}</p>
       <p><strong>Typ av Event:</strong> ${data.event}</p>
       <p><strong>Antal gäster:</strong> ${data.amountGuests}</p>
+      <p><strong>Leverans/Upphämtning:</strong> ${data.deliveryType === 'delivery' ? 'Leverans' : 'Upphämtning'}</p>
+      ${deliveryInfo}
       <p><strong>Meddelande:</strong></p>
       <p>${String(data.message).replace(/\n/g, '<br>')}</p>
     `;
